@@ -1,0 +1,20 @@
+Jeffrey Haines <jeffhaines@me.com>
+December 9th, 2016
+
+===============================================================================
+
+Estimated Time 01:00
+Plan:
+*Learn how to code in Haskell
+*Learn emacs to edit files
+*Write a Hello World program
+
+Actual Time 01:00
+Observations:
+Spent one hour learning Haskell and emacs
+Wrote a simple print string hello world program
+Haskell can do amazing things in a single line of code
+Haskell is considered very safe do to it's strict compiler rules
+Haskell has a large library of powerful functionality
+
+============================================================================== 

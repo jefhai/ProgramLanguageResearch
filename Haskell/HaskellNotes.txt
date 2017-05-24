@@ -1,0 +1,192 @@
+Jeffrey Haines <jeffhaines@me.com>
+December 9th, 2016
+
+===============================================================================
+
+Haskell Programming Notes
+
+ghci - the Haskell interpreter for Mac OS X
+
+commands:
+	:l program.hs - used to load a Haskell file into the interpreter
+
+	:r - used to run the loaded Haskell file
+	   type in any value name to see its output
+
+	:t sqrt - returns the signature of a Haskell function
+
+	let - assignment operator in interpreter
+
+	ghc --make program
+
+	./program
+
+-- single line comment
+{- multi line comment -}
+
+module importing:
+       import Data,List
+       import System.IO
+
+Haskell uses type interference. You can also specify a static type.
+
+Types
+	Int - min: -2^63 max: 2^63
+	maxInt = maxBound :: Int
+	minInt = minBound :: Int
+
+	Integer - an unbounded whole number
+	
+	Float - single percision
+
+	Double - 11 point percision
+	bigFloat = 3.99999999999 + 0.00000000005
+
+	Bool
+
+	Char - single unicode characters
+
+	Tuple
+
+functions can't begin with a capital letter
+
+permanentValue :: Int
+permanentValue = 5
+
+sumOfNums = sum [1...1000]
+
+addNum = 1 + 3
+subNum = 1 - 3
+multNum = 1 * 3
+divNum = 1 / 3
+
+prefix operator
+       mod = mod 1 3
+
+infix operator
+      mod2 = 5 'mod' 4
+
+negNum = 1 + (-3)
+
+inition of sqrt
+
+num9 = 9 :: Int
+sqrt9 = sqrt (fromIntegral num9)
+
+piValue = pi
+ePow9 = exp 9
+logOf9 = log 9
+squared9 = 9 ** 2
+truncateVal = truncate 9.999
+roundVal = round 9.999
+ceilingVal = ceiling 9.999
+flourVal = flour 9.999
+
+sin, cos, tan, asin, atan, acos, sinh, tanh, cosh, asinh, atanh, acosh
+
+&& - and
+|| - or
+not() - not equal
+
+Haskell list
+	single linked
+	add to front only
+	primes = [3, 5, 7, 11]
+	
+	concatinate
+		morePrime = primes ++ [13, 17, 19, 23, 29]
+	cons operator
+		used to prepend head element to list
+		favNums = 2 : 7 : 21 : 66 : []
+
+	multiLists = [[3,5,7],[11,13,17]]
+
+	morePrimes2 = 2 : morePrime
+
+	lenPrime = length morePrimes2
+
+	revPrime = reverse morePrimes2
+
+	isListEmpty = null morePrimes2
+
+	secondPrime = morePrimes2 !! 1
+
+	firstPrime = head morePrimes2
+
+	lastPrime = last morePrimes2
+
+	primeInit = init morePrimes3
+		  everything but the last value
+
+	first2PRimes = take 3 morePrimes2
+
+	removedPrimes = drop 3 morePrimes2
+		      drops 3 from head of list
+
+	is7inList = 7 'elem' morePrimes2
+
+	maxPrime = maximum morePrimes2
+
+	minPrime = minimum morePrimes2
+
+	sumPrimes = sum morePrimes2
+
+	prodPrimes = product morePrimes2
+
+	zeroTo10 = [0...10]
+
+	evenList = [2,4..20]
+		 even Integers
+	
+	letterList = ['A','C'..'Z']
+		   Every other character
+
+	infinPow10 = [10,20..]
+		   Haskell is lazy, will only create what you need
+
+	many2s = take 10 (repeat 2)
+
+	many3s = replicate 10 3
+
+	cycleList = take 10 (cycle [1,2,3,4,5])
+
+	listTimes2 = [x * 2 | x <- [1..10]]
+	
+	listTimes3 = [x * 3 | x <- [1..10]], x * 3 <= 50]
+		   the right of the third comma will filter the new list
+
+	disvisBy9N13 = [x | x <= [1..500], x 'mod' 13 == 0, x 'mod' 9 == 0]
+		   additional list filters can be added
+
+	sortedList = sort [9,1,5,2,6,3,7]	
+
+	sumOfLists = zipWith (+) [1,2,3,4,5] [6,7,8,9,10]
+	
+	listBiggerThan5 = filter (>5) morePrimes
+
+	evensUpTo20 = takeWhile (<= 20) [2,4..]
+
+	multOfList = foldl (*) 1 [2,3,4,5]
+		   from left to right and multiply them all together
+		   foldr - right to left
+
+	pow3List = [3^n | n <- [1..10]]
+	
+	multTable = [[x * y | y <- [1..10]] | x <- [1..10]]
+
+	ranTuple = (1, "Random Tuple)
+
+	bobSmith = ("Bob Smith", 52);
+		 tuple pair
+
+	bobsName = fst bobSmith
+	
+	bobsAge = snd bobSmith
+
+	names = ["Bob", "Mary", "Tom"]
+	addresses = ["123 Main", "234 North", "567 South"]
+
+	namesNAddress = zip names addresses
+
+===============================================================================
+
